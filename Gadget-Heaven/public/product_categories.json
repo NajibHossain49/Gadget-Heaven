@@ -1,0 +1,60 @@
+[
+    {
+        "product_id": 1,
+        "category": "Smartphones"
+    },
+    {
+        "product_id": 2,
+        "category": "Smartphones"
+    },
+    {
+        "product_id": 3,
+        "category": "Smartphones"
+    },
+    {
+        "product_id": 4,
+        "category": "Smartphones"
+    },
+    {
+        "product_id": 5,
+        "category": "Smartphones"
+    },
+    {
+        "product_id": 6,
+        "category": "Smartphones"
+    },
+    {
+        "product_id": 7,
+        "category": "Audio"
+    },
+    {
+        "product_id": 8,
+        "category": "Audio"
+    },
+    {
+        "product_id": 9,
+        "category": "Wearables"
+    },
+    {
+        "product_id": 10,
+        "category": "Wearables"
+    },
+    {
+        "product_id": 11,
+        "category": "Laptops"
+    },
+    {
+        "product_id": 12,
+        "category": "Laptops"
+    },
+   
+    {
+        "product_id": 13,
+        "category": "Gaming"
+    },
+    {
+        "product_id": 14,
+        "category": "Gaming"
+    }
+    
+]

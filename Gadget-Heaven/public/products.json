@@ -1,0 +1,221 @@
+[
+    {
+        "product_id": 1,
+        "product_title": "Smartphone X1",
+        "product_image": "https://5.imimg.com/data5/KV/ZH/LM/GLADMIN-50267556/eluga-x1-pro-mobiles-500x500-500x500-1000x1000.jpg",
+        "category": "Smartphones",
+        "price": 699.99,
+        "description": "Latest smartphone with high-end features.",
+        "Specification": [
+            "6.5-inch display",
+            "128GB storage",
+            "12MP camera",
+            "4000mAh battery"
+        ],
+        "availability": "in stock",
+        "rating": 4.5
+    },
+    {
+        "product_id": 2,
+        "product_title": "Smartphone Y2",
+        "product_image": "https://ampro.in/wp-content/uploads/2019/06/Redmi-Y2-Blue.jpg",
+        "category": "Smartphones",
+        "price": 599.99,
+        "description": "Mid-range smartphone with solid performance.",
+        "Specification": [
+            "6.1-inch display",
+            "64GB storage",
+            "8MP camera",
+            "3500mAh battery"
+        ],
+        "availability": "in stock",
+        "rating": 4.0
+    },
+    {
+        "product_id": 3,
+        "product_title": "Smartphone Z3",
+        "product_image": "https://ikall.in/wp-content/uploads/2022/07/Z3-Emerald-Green-5-600x600.jpg",
+        "category": "Smartphones",
+        "price": 799.99,
+        "description": "Premium smartphone with advanced features.",
+        "Specification": [
+            "6.7-inch display",
+            "256GB storage",
+            "16MP camera",
+            "4500mAh battery"
+        ],
+        "availability": "in stock",
+        "rating": 4.7
+    },
+    {
+        "product_id": 4,
+        "product_title": "Smartphone A4",
+        "product_image": "https://images-na.ssl-images-amazon.com/images/I/51drou068tL.jpg",
+        "category": "Smartphones",
+        "price": 499.99,
+        "description": "Affordable smartphone with great features.",
+        "Specification": [
+            "6.0-inch display",
+            "32GB storage",
+            "5MP camera",
+            "3000mAh battery"
+        ],
+        "availability": "in stock",
+        "rating": 3.8
+    },
+    {
+        "product_id": 5,
+        "product_title": "Smartphone B5",
+        "product_image": "https://i5.walmartimages.com/asr/afcba0f1-8440-4eec-9127-f885d4e1ab84.7878c071bdbb68b3b73fa544e0d315b6.jpeg?odnHeight=2000&odnWidth=2000&odnBg=FFFFFF",
+        "category": "Smartphones",
+        "price": 649.99,
+        "description": "A smartphone with innovative design.",
+        "Specification": [
+            "6.3-inch display",
+            "128GB storage",
+            "12MP camera",
+            "3800mAh battery"
+        ],
+        "availability": "in stock",
+        "rating": 4.3
+    },
+    {
+        "product_id": 6,
+        "product_title": "Smartphone C6",
+        "product_image": "https://www.mobiledokan.co/wp-content/uploads/2020/10/BLU-C6-2020-500x500.jpg",
+        "category": "Smartphones",
+        "price": 729.99,
+        "description": "Flagship smartphone with top-tier specs.",
+        "Specification": [
+            "6.9-inch display",
+            "512GB storage",
+            "20MP camera",
+            "5000mAh battery"
+        ],
+        "availability": "out of stock",
+        "rating": 4.8
+    },
+    {
+        "product_id": 7,
+        "product_title": "Wireless Earbuds",
+        "product_image": "https://ankerbd.com/wp-content/uploads/2023/07/anker-soundcore-r50i-true-wireless-earbuds-2.webp",
+        "category": "Audio",
+        "price": 129.99,
+        "description": "High-quality wireless earbuds with noise cancellation.",
+        "Specification": [
+            "Bluetooth 5.0",
+            "20 hours battery life",
+            "Water-resistant"
+        ],
+        "availability": "in stock",
+        "rating": 4.6
+    },
+    {
+        "product_id": 8,
+        "product_title": "Bluetooth Speaker",
+        "product_image": "https://gadgetnmusic.com/wp-content/uploads/2024/05/Tribit-XSound-Go-Bluetooth-Speaker-7.jpg",
+        "category": "Audio",
+        "price": 89.99,
+        "description": "Portable Bluetooth speaker with rich sound.",
+        "Specification": [
+            "10 hours battery life",
+            "Water-resistant",
+            "Bluetooth 5.0"
+        ],
+        "availability": "in stock",
+        "rating": 4.2
+    },
+    {
+        "product_id": 9,
+        "product_title": "Smartwatch Pro",
+        "product_image": "https://adminapi.applegadgetsbd.com/storage/media/large/CUsersAPGBD-06DesktopDaily-Work04-12-202204-12-2022oraimo-Watch-2-Pro-OSW-32-BT-Calling-Smart-Watch-(3)-2439.jpg",
+        "category": "Wearables",
+        "price": 249.99,
+        "description": "Smartwatch with fitness tracking features.",
+        "Specification": [
+            "Heart rate monitor",
+            "GPS",
+            "Water-resistant"
+        ],
+        "availability": "in stock",
+        "rating": 4.4
+    },
+    {
+        "product_id": 10,
+        "product_title": "Fitness Tracker",
+        "product_image": "https://m.media-amazon.com/images/I/61tWTVfGibL._SL1500_.jpg",
+        "category": "Wearables",
+        "price": 59.99,
+        "description": "Compact fitness tracker for everyday use.",
+        "Specification": [
+            "Step counter",
+            "Sleep monitoring",
+            "Heart rate sensor"
+        ],
+        "availability": "in stock",
+        "rating": 4.1
+    },
+    {
+        "product_id": 11,
+        "product_title": "Gaming Laptop",
+        "product_image": "https://computermania-bd.b-cdn.net/wp-content/uploads/Dell-Gaming-4-4-2.jpg",
+        "category": "Laptops",
+        "price": 1299.99,
+        "description": "High-performance gaming laptop for serious gamers.",
+        "Specification": [
+            "15.6-inch display",
+            "16GB RAM",
+            "1TB SSD"
+        ],
+        "availability": "in stock",
+        "rating": 4.9
+    },
+    {
+        "product_id": 12,
+        "product_title": "Ultrabook 14",
+        "product_image": "https://computermania-bd.b-cdn.net/wp-content/uploads/ASUS-Zenbook-14-OLED-Q415MA-Ultrabook-Laptop-4.jpg",
+        "category": "Laptops",
+        "price": 899.99,
+        "description": "Sleek and lightweight ultrabook for professionals.",
+        "Specification": [
+            "14-inch display",
+            "8GB RAM",
+            "512GB SSD"
+        ],
+        "availability": "in stock",
+        "rating": 4.3
+    },
+
+    {
+        "product_id": 13,
+        "product_title": "VR Headset",
+        "product_image": "https://i.pcmag.com/imagery/roundups/02Qp8NssQCHrqFVFEOXnkxr-28..v1623684908.jpg",
+        "category": "Gaming",
+        "price": 399.99,
+        "description": "Immersive VR headset for gaming and entertainment.",
+        "Specification": [
+            "Wireless",
+            "High resolution",
+            "Wide field of view"
+        ],
+        "availability": "in stock",
+        "rating": 4.8
+    },
+    {
+        "product_id": 14,
+        "product_title": "Gaming Mouse",
+        "product_image": "https://i5.walmartimages.com/asr/8c2707d9-286f-440f-8a7f-8639ccb6e247_1.6e24c983626322e82e3fb15f4ed7e13a.jpeg",
+        "category": "Gaming",
+        "price": 79.99,
+        "description": "Precision gaming mouse with customizable settings.",
+        "Specification": [
+            "RGB lighting",
+            "Adjustable DPI",
+            "Ergonomic design"
+        ],
+        "availability": "in stock",
+        "rating": 4.4
+    }
+    
+    
+]
