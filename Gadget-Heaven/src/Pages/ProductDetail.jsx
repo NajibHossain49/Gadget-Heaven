@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router-dom";
-import { FaRegHeart } from "react-icons/fa";
+import { FaRegHeart, FaShoppingCart, FaStar } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { addToCart } from "../cartUtils/cartUtils";
 import { addToWishlist } from "../wishlistUtils/wishlistUtils";
@@ -49,114 +49,112 @@ const ProductDetail = () => {
     }
     const result = addToWishlist(product);
     if (result.success) {
-      setIsInWishlist(true); // Update the wishlist state
+      setIsInWishlist(true);
       toast.success("Added to wishlist successfully!");
     } else {
       toast.info("This item is already in your wishlist.");
     }
   };
 
+  // Color palette
+  const colors = {
+    primary: 'bg-gradient-to-r from-[#8A4FFF] to-[#5E17EB]',
+    secondary: 'bg-gradient-to-r from-[#FF6B6B] to-[#FF4E4E]',
+    background: 'bg-gradient-to-br from-[#F5F7FA] to-[#E8EEF5]',
+    accent: 'bg-[#4ECDC4]'
+  };
+
   return (
     <>
       <Helmet>
-        <title>{`${product_title} `}</title>
+        <title>{`${product_title}`}</title>
       </Helmet>
-      <div className="relative">
-        <div className="text-center bg-[#9538E2] p-10 pb-80">
-          <div className="max-w-3xl mx-auto">
-            <h1 className="text-3xl font-bold text-white mb-4">
+      <div className="min-h-screen flex flex-col">
+        {/* Gradient Header */}
+        <div className={`${colors.primary} py-16 px-4 text-center`}>
+          <div className="max-w-3xl mx-auto text-white">
+            <h1 className="text-4xl font-extrabold mb-4 drop-shadow-lg">
               Product Details
             </h1>
-            <p className="text-lg text-white mb-6">
-              Explore the latest gadgets that will take your experience to the
-              next level.
+            <p className="text-xl opacity-80 tracking-wide">
+              Discover cutting-edge technology that transforms your digital experience
             </p>
           </div>
         </div>
-        <div className="flex max-w-4xl mx-auto bg-white p-10 gap-12 rounded-lg shadow-lg -mt-72 mb-32">
-          <div className="max-w-[350px] rounded-lg p-4">
-            <img
-              src={product_image}
-              alt="Gadget"
-              className="w-full rounded-lg"
-            />
-          </div>
-          <div className="flex flex-col gap-5">
-            <div>
-              <h1 className="text-3xl font-semibold">{product_title}</h1>
-              <p className="text-xl font-semibold text-gray-700 mt-2">
-                Price: ${price}
-              </p>
-            </div>
-            <div
-              className={`inline-block px-3 py-1 rounded-full text-xs font-medium border ${
-                availability
-                  ? "bg-yellow-100 text-yellow-800 border-yellow-400"
-                  : "bg-yellow-200 text-yellow-900 border-yellow-500"
-              }`}
-              style={{ width: "100px", textAlign: "center" }}
-            >
-              {availability ? "In Stock" : "Out of Stock"}
-            </div>
 
-            <p className="text-gray-600">{description}</p>
-            <div>
-              <h2 className="font-semibold text-lg text-gray-800">
-                Specification:
-              </h2>
-              <ul className="list-decimal list-inside text-gray-700 ml-4">
-                {Specification?.map((specs, index) => (
-                  <li key={index}>{specs}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h2 className="font-semibold text-lg text-gray-800">Rating:</h2>
-              <div className="flex items-center">
-                <div className="rating rating-lg rating-half mr-2">
-                  <input
-                    type="radio"
-                    name="rating-10"
-                    className="rating-hidden"
-                  />
-                  {[...Array(5)].map((_, index) => (
-                    <span key={index}>
-                      <input
-                        type="radio"
-                        name="rating-10"
-                        className={`mask mask-star-2 mask-half-1 bg-yellow-500`}
-                        defaultChecked={roundedRating >= index + 0.5}
-                      />
-                      <input
-                        type="radio"
-                        name="rating-10"
-                        className={`mask mask-star-2 mask-half-2 bg-yellow-500`}
-                        defaultChecked={roundedRating >= index + 1}
-                      />
-                    </span>
-                  ))}
-                </div>
-                <span className="text-gray-700 text-lg font-semibold">
-                  {roundedRating} / 5
-                </span>
+        {/* Product Details Container */}
+        <div className={`${colors.background} flex-grow py-12 px-4`}>
+          <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row">
+            {/* Product Image Section */}
+            <div className="md:w-1/2 p-8 flex items-center justify-center bg-gray-50">
+              <div className="rounded-2xl overflow-hidden shadow-lg transform transition-all hover:scale-105">
+                <img 
+                  src={product_image} 
+                  alt={product_title} 
+                  className="w-full h-auto object-cover"
+                />
               </div>
             </div>
 
-            <div className="flex items-center gap-3 mt-4">
-              <button
-                className="px-6 py-2 bg-purple-600 text-white rounded-full flex items-center gap-2 hover:bg-purple-700"
-                onClick={handleAddToCart}
-              >
-                Add To Cart
-              </button>
-              <div
-                className={`p-2 rounded-full bg-white border border-purple-600 hover:bg-purple-100 cursor-pointer ${
-                  isInWishlist ? "cursor-not-allowed opacity-50" : ""
-                }`}
-                onClick={handleFavorite}
-                disabled={isInWishlist}
-              >
-                <FaRegHeart className="text-purple-600 text-xl" />
+            {/* Product Information Section */}
+            <div className="md:w-1/2 p-8 space-y-6">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-800 mb-2">{product_title}</h2>
+                <p className={`text-2xl font-semibold ${colors.secondary} bg-clip-text text-transparent`}>
+                  ${price}
+                </p>
+              </div>
+
+              {/* Availability Badge */}
+              <div className={`inline-block px-4 py-2 rounded-full text-sm font-medium ${availability ? colors.accent : 'bg-red-500'} text-white`}>
+                {availability ? "In Stock" : "Out of Stock"}
+              </div>
+
+              <p className="text-gray-600 leading-relaxed">{description}</p>
+
+              {/* Specifications */}
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">Specifications:</h3>
+                <ul className="space-y-2 text-gray-700">
+                  {Specification?.map((specs, index) => (
+                    <li key={index} className="flex items-center">
+                      <span className="mr-2 text-green-500">✔</span>
+                      {specs}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Rating Section */}
+              <div className="flex items-center space-x-4">
+                <div className="flex text-yellow-500">
+                  {[...Array(5)].map((_, index) => (
+                    <FaStar 
+                      key={index} 
+                      className={`w-6 h-6 ${index < Math.floor(roundedRating) ? 'text-yellow-500' : 'text-gray-300'}`}
+                    />
+                  ))}
+                </div>
+                <span className="text-lg font-semibold text-gray-700">
+                  {roundedRating} / 5
+                </span>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="flex space-x-4">
+                <button 
+                  onClick={handleAddToCart}
+                  className={`${colors.primary} text-white px-6 py-3 rounded-full flex items-center space-x-2 hover:opacity-90 transition-all`}
+                >
+                  <FaShoppingCart className="mr-2" /> Add to Cart
+                </button>
+                <button 
+                  onClick={handleFavorite}
+                  disabled={isInWishlist}
+                  className={`border-2 border-purple-500 text-purple-500 px-4 py-3 rounded-full hover:bg-purple-50 transition-all ${isInWishlist ? 'opacity-50 cursor-not-allowed' : ''}`}
+                >
+                  <FaRegHeart />
+                </button>
               </div>
             </div>
           </div>

@@ -36,121 +36,144 @@ const HelpPage = () => {
   };
 
   return (
-    <div className="max-w-3xl mx-auto p-6">
+    <div className="bg-gradient-to-br from-purple-50 to-blue-50 min-h-screen">
       <Helmet>
         <title>Help - Find Assistance and FAQs</title>
       </Helmet>
-      <div className="text-center bg-[#9538E2] p-10 mb-16">
-        <h1 className="text-3xl text-white font-bold text-center mb-8">Need assistance?</h1>
-        <p className="text-base text-white">Browse our help articles or contact support for more.</p>
-      </div>
-
-      {/* FAQ Section */}
-      {faqs.length > 0 ? (
-        <section className="faq-section mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-center">
-            Frequently Asked Questions
-          </h2>
-          <div className="faq-list space-y-4">
-            {faqs.map((faq, index) => (
-              <div key={index} className="faq-item">
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="w-full text-left p-4 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-md text-lg font-semibold"
-                >
-                  {faq.question}
-                </button>
-                {activeIndex === index && (
-                  <div className="faq-answer p-4 mt-2 bg-gray-50 border border-t-0 border-gray-300 rounded-md">
-                    <p>{faq.answer}</p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </section>
-      ) : (
-        <div className="text-center text-lg font-semibold text-gray-500">
-          No FAQs available at the moment.
+      
+      <div className="container mx-auto px-4 py-12">
+        {/* Hero Section */}
+        <div className="bg-gradient-to-r from-purple-600 to-indigo-600 rounded-2xl p-10 mb-16 shadow-2xl transform transition-all hover:scale-[1.02]">
+          <h1 className="text-4xl text-white font-extrabold text-center mb-6 tracking-tight">
+            Need Assistance?
+          </h1>
+          <p className="text-xl text-white/90 text-center max-w-2xl mx-auto">
+            We're here to help! Browse our comprehensive help articles or reach out to our support team.
+          </p>
         </div>
-      )}
 
-      <section className="contact-section mb-8">
-        <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
-        <form className="space-y-4" onSubmit={handleSubmit}>
-          <div className="form-field">
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-700"
+        {/* FAQ Section */}
+        <section className="max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl font-bold mb-8 text-center text-gray-800 relative">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600">
+              Frequently Asked Questions
+            </span>
+            <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-1 w-24 bg-gradient-to-r from-purple-500 to-indigo-500"></div>
+          </h2>
+          
+          {faqs.length > 0 ? (
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <div 
+                  key={index} 
+                  className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+                >
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className="w-full text-left p-5 flex justify-between items-center bg-gradient-to-r from-purple-50 to-blue-50 hover:from-purple-100 hover:to-blue-100 transition-colors"
+                  >
+                    <span className="text-lg font-semibold text-gray-800">{faq.question}</span>
+                    <span className="text-purple-600">
+                      {activeIndex === index ? '−' : '+'}
+                    </span>
+                  </button>
+                  {activeIndex === index && (
+                    <div className="p-5 bg-white border-t border-gray-100">
+                      <p className="text-gray-700">{faq.answer}</p>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center text-lg font-semibold text-gray-500">
+              No FAQs available at the moment.
+            </div>
+          )}
+        </section>
+
+        {/* Contact Section */}
+        <section className="max-w-2xl mx-auto mb-16 bg-white rounded-2xl shadow-2xl p-8">
+          <h2 className="text-3xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+            Contact Us
+          </h2>
+          <form className="space-y-6" onSubmit={handleSubmit}>
+            <div className="space-y-4">
+              <div>
+                <label 
+                  htmlFor="name" 
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border-2 border-purple-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all"
+                />
+              </div>
+
+              <div>
+                <label 
+                  htmlFor="email" 
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Email
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border-2 border-purple-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all"
+                />
+              </div>
+
+              <div>
+                <label 
+                  htmlFor="message" 
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border-2 border-purple-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all h-32"
+                />
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl font-bold hover:from-purple-700 hover:to-indigo-700 transition-all transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-purple-500"
             >
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name} // Controlled input
-              onChange={handleChange} // Handle input change
-              required
-              className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            />
-          </div>
+              Send Message
+            </button>
+          </form>
+        </section>
 
-          <div className="form-field">
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email} // Controlled input
-              onChange={handleChange} // Handle input change
-              required
-              className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            />
-          </div>
-
-          <div className="form-field">
-            <label
-              htmlFor="message"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message} // Controlled input
-              onChange={handleChange} // Handle input change
-              required
-              className="w-full p-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            />
-          </div>
-
-          <button
-            type="submit"
-            className="w-full py-3 px-6 bg-indigo-600 text-white rounded-md font-semibold hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          >
-            Submit
-          </button>
-        </form>
-      </section>
-
-      {/* Return & Exchange Policy Section */}
-      <section className="policy-section mb-8">
-        <h2 className="text-2xl font-semibold mb-4">
-          Return & Exchange Policy
-        </h2>
-        <p className="text-gray-700">
-          We offer a <span className="font-bold">15-day return policy</span> for
-          most items. Please ensure the item is unused and in its original
-          packaging. For more details, visit our Return & Exchange Policy page.
-        </p>
-      </section>
+        {/* Return & Exchange Policy Section */}
+        <section className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8">
+          <h2 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-600">
+            Return & Exchange Policy
+          </h2>
+          <p className="text-gray-700 leading-relaxed">
+            We offer a <span className="font-bold text-purple-600">15-day return policy</span> for most items. 
+            Please ensure the item is unused and in its original packaging. 
+            For more comprehensive details, visit our dedicated Return & Exchange Policy page.
+          </p>
+        </section>
+      </div>
     </div>
   );
 };
